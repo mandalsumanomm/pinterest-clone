@@ -1,0 +1,72 @@
+<% include ./partials/header.ejs %>
+<div class="container-profile">
+  <div class="profile-pic" onclick="changeProfile()">
+    <% if (user.profileImage) { %>
+    <img src="/images/uploads/<%= user.profileImage %>" alt="Profile Picture" />
+    <% } else { %>
+    <div class="initial"><%= user.username.charAt(0).toUpperCase() %></div>
+    <% } %> 
+  </div>
+
+  <form
+    id="uploadform"
+    hidden
+    action="/fileupload"
+    method="post"
+    enctype="multipart/form-data"
+>
+    <input type="file" name="image" id="fileInput" />
+</form>
+
+  <div class="username"><%= user.username.split(' ')[0].charAt(0).toUpperCase() + user.username.split(' ')[0].slice(1) %></div>
+
+  <div class="social-info">
+    <div class="logo">
+      <img
+        src="https://i.pinimg.com/564x/48/12/b6/4812b6827d118092c13d95af0dbadaa7.jpg"
+        alt=""
+      />
+      <%= user.username %>
+    </div>
+    
+    <div class="follow">0 following</div>
+
+  </div>
+  <button class="seBtn">Share</button>
+  <a href="/fileupload" class="seBtn">Edit profile</a>
+  <div class="tabs">
+    <span>
+      <% if (user.posts.length === 0) { %>
+        Nothing to show...yet! Pins you create will live here.
+      <% } else { %>
+        Did you know? You've posted <%= user.posts.length %> pin<%= user.posts.length !== 1 ? 's' : '' %>.
+      <% } %>
+    </span>
+    
+  </div>
+   
+  <div>
+    <a href="/upload" class="seBtn2">Create Pin</a>
+  </div>
+ </div>
+
+  <!-- user's own uploaded image -->
+<div class="container">
+  <% posts.forEach(function(post) { %>
+    <div class="box">
+      <a href="/images/uploads/<%= post.image%>" target="_blank">
+        <img src="/images/uploads/<%= post.image%>" alt="...">
+      </a>
+      <div class="caption">
+        <p>@<%= post.user.username %></p>
+        <p><%= post.imageText %></p>
+        
+      </div>
+      <button class="delete-button" onclick="deletePost('<%= post._id %>')">Delete</button>
+    </div>
+  <% }) %>
+</div>
+
+    
+
+<% include ./partials/footer.ejs %>

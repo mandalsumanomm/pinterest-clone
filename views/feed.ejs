@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinterest</title>
+    <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/564x/48/12/b6/4812b6827d118092c13d95af0dbadaa7.jpg">
+    <link rel="stylesheet" href="/stylesheets/feed.css" />
+  </head>
+  <body>
+    <% include ./partials/header.ejs %>
+
+    <div id="loader">
+      <div class="spinner"></div>
+    </div>
+    
+    <div class="container">
+      <% posts.forEach(function(post) { %>
+      <div class="box">
+        <a href="/details/<%= post._id %>" class="image-link">
+          <img src="/images/uploads/<%= post.image%>" alt="...">
+        </a>
+        <div class="caption">         
+        </div>
+      </div>
+      <% }) %>
+      
+      <% include ./partials/images.ejs %> 
+    </div>
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="/javascripts/feed.js"></script>
+  </body>
+</html>

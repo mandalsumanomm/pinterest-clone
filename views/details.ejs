@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinterest</title>
+    <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/564x/48/12/b6/4812b6827d118092c13d95af0dbadaa7.jpg">
+    <link rel="stylesheet" href="/stylesheets/details.css" />
+</head>
+<body>
+  <% include ./partials/header.ejs %>
+
+  <div class="post-details">
+    <!-- Display the post image -->
+    <div class="image-container">
+      <a href="/details/<%= post._id %>" class="image-link">
+        <img src="/images/uploads/<%= post.image%>" alt="...">
+      </a>
+    </div>
+    
+    <!-- Display the image information -->
+    <div class="image-info">
+      <!-- Display the image text -->
+      <div class="image-text">
+        <p><strong>Image Text:</strong> <%= post.imageText %></p>
+         <p><strong>Posted By:</strong> <%= post.user.username %></p>
+      </div>
+    </div>
+  </div>
+    
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/javascripts/details.js"></script>
+</body>
+</html>

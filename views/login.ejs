@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinterest</title>
+  <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/564x/48/12/b6/4812b6827d118092c13d95af0dbadaa7.jpg">
+  <link rel="stylesheet" href="/stylesheets/login.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <!-- Pinterest logo -->
+      <img
+        src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png"
+        alt="pin logo"
+        class="img1"
+      />
+      <p class="header">Login to see more</p>
+
+    
+    <% if(error.length > 0){%>
+      <p class ="error"><%= error %></p>
+      <%} %>
+
+      <!-- Registration form -->
+      <form action="/login" method="post">
+        <input type="text" name="username" placeholder="Username" class="detail" required /><br />
+        <input type="password" name="password" placeholder="Password" class="detail" required /><br />
+      
+
+        <button type="submit" class="btn int">Login</button>
+      </form>
+
+      <!-- Additional options -->
+      <h3>Not a member yet? <a href="/">Register now.</a></h3>
+     
+      <!-- Footer -->
+      <footer>
+        <p>
+          By continuing, you agree to Pinterest's <b>Terms of Service, Privacy policy.</b>
+        </p>
+        <hr />
+        <p>New user? <a href="/">Register here.</a></p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

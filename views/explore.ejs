@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/564x/48/12/b6/4812b6827d118092c13d95af0dbadaa7.jpg">
+  <link rel="stylesheet" href="/stylesheets/explore.css" />
+</head>
+<body>
+  <% include ./partials/header.ejs %>
+
+  <div class="container-explore">
+    <div class="title">
+      <div class="date-txt" id="currentDate"></div>
+      <div class="h-txt">Stay Inspired</div>
+    </div>
+    <div class="grid">
+      <% include ./partials/imageexplore.ejs %>
+    </div>
+</div>
+<script src="/javascripts/explore.js"></script>
+</body>
+</html>

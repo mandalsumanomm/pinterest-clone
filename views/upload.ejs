@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinterest</title>
+  <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/564x/48/12/b6/4812b6827d118092c13d95af0dbadaa7.jpg">
+  <link rel="stylesheet" href="/stylesheets/upload.css">
+</head>
+<body>
+  <% include ./partials/header.ejs %>
+  <div class="main-upload">
+    
+  </div>
+  <hr class="horizontal-line1">
+  <div class="vertical-line"></div>
+  <div class="vertical-line"></div>
+  <div class="text-p">Create Pin</div>
+  <hr class="horizontal-line2">
+  
+  <div class="container-upload">
+    <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+      <input type="text" name="filecaption" placeholder="Enter caption" class="caption-input" required />
+      <label for="file" class="file-label">
+        <input type="file" name="file" id="file" class="file-input" />
+        <span class="file-icon">&#8682;</span> 
+        Choose File
+      </label>
+      <button type="submit" class="upload-btn">Upload</button>
+    </form>
+  </div>
+  
+  <script src="/javascripts/upload.js"></script>
+</body>
+</html>

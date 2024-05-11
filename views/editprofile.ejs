@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinterest</title>
+  <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/564x/48/12/b6/4812b6827d118092c13d95af0dbadaa7.jpg">
+  <link rel="stylesheet" href="/stylesheets/editprofile.css">
+</head>
+<body>
+
+  <% include ./partials/header.ejs %>
+  
+  <body>
+    <div class="container-editprofile">
+        <h1>Edit Profile</h1>
+        <p>Keep your personal details private. Information you add here is visible to anyone who can view your profile.</p>
+    </div>
+    <main class="main">
+        <section class="main__section">
+            <div class="txt">Photo</div>
+            <div class="main__section-content">
+                <div class="main__section-image">
+                    <div class="profile-pic">
+                        <% if (user.profileImage) { %>
+                        <img src="/images/uploads/<%= user.profileImage %>" alt="Profile Picture" />
+                        <% } else { %>
+                        <div class="initial"><%= user.username.charAt(0).toUpperCase() %></div>
+                        <% } %>
+                    </div> 
+                </div>
+                <button class="changeBtn" id="changeButton">Change</button>
+                <!-- Display a message if the file input is invalid -->
+                <p id="errorMessage" style="color: red; display: none;">Please select a valid image file.</p>
+            </div>
+        </section>
+        
+        <form
+            id="uploadform"
+            hidden
+            action="/fileupload"
+            method="post"
+            enctype="multipart/form-data"
+        >
+            <input type="file" name="image" id="fileInput" />
+        </form>
+        
+        <section class="main__section">
+            <div class="main__section-content">
+                <div class="input-group">
+                    <div class="txt">First Name</div>
+                    <input type="text" id="first-name" name="first-name" value="<%= user.username.split(' ')[0].charAt(0).toUpperCase() + user.username.split(' ')[0].slice(1) %>">
+                </div>
+                <div class="input-group">
+                    <div class="txt">Last Name</div>
+                    <% if (user.fullname && user.fullname.split(' ').length > 1) { %>
+                        <input type="text" id="last-name" name="last-name" value="<%= user.fullname.split(' ')[1].charAt(0).toUpperCase() + user.fullname.split(' ')[1].slice(1) %>">
+                    <% } else { %>
+                        <!-- Handle the case where the username doesn't have the expected format -->
+                        <input type="text" id="last-name" name="last-name" value="">
+                    <% } %>
+                    
+
+                </div>
+            </div>
+        </section>
+                
+           
+        </section>
+        <section class="main__section">
+            <div class="input-group">
+            <div class="txt">About</div>
+            <div class="main__section-content">
+                <textarea name="about" id="about" cols="30" rows="10">Tell your story</textarea>
+            </div>
+            </div>
+        </section>
+        <section class="main__section">
+            <div class="txt">Pronouns</div>
+            <div class="main__section-content">
+                <div class="input-group">
+                    <select id="pronouns" name="pronouns" >
+                    <option value="" disabled selected>Add your pronouns</option>    
+                    <option value="ey/em">ey/em</option>
+                    <option value="he/him">he/him</option>
+                    <option value="she/her">she/her</option>
+                    <option value="they/them">they/them</option>
+                    <option value="ve/ver">ve/ver</option>
+                    <option value="xie/xem">xie/xem</option>
+                    <option value="ze/zir">ze/zir</option>
+                  </select>
+                </div>   
+            </div>
+            <div class="txt">Choose up to 2 sets of pronouns to appear on your profile so others know how to refer to you. You can edit or remove these any time.</div>
+        </section>
+
+        <section class="main__section">
+            <div class="txt">Website</div>
+            <div class="main__section-content">
+                <div class="input-group">
+                    <input type="text" id="website" name="website" value="Add a link to drive to your site" onfocus="this.style.color='red';">
+                </div>   
+            </div>           
+        </section>
+
+        <section class="main__section">
+            <div class="txt">Username</div>
+            <div class="main__section-content">
+                <div class="input-group">
+                    <!-- Use value="<%= user.username %>" to populate the input field with the current username -->
+                    <input type="text" id="username" name="username" value="<%= user.username %>">
+                </div>   
+            </div>   
+            <div class="txt">www.pinterest.com/<span id="usernameDisplay"><%= user.username %></span></div>        
+        </section>
+
+                
+                
+
+    </main>
+    <footer class="footer">
+        <button id="resetButton" class="footer__button">Reset</button>
+        <button id="saveButton" class="footer__button">Save</button>
+    </footer>
+<script src="/javascripts/editprofile.js"></script>
+</body>
+</html>

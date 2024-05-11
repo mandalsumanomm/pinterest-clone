@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pinterest</title>
+    <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/564x/48/12/b6/4812b6827d118092c13d95af0dbadaa7.jpg">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+       
+        <img
+          src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png"
+          alt="pin logo"
+          class="img1"
+        />
+        <p class="header">Register to see more</p>
+
+     
+        <form action="/register" method="post">
+          <input type="text" name="username" placeholder="Username" class="detail" required /><br />
+          <input type="text" name="fullname" placeholder="Full Name" class="detail" /><br />
+          <input type="email" name="email" placeholder="Email" class="detail" required /><br />
+          <input type="password" name="password" placeholder="Password" class="detail" required /><br />
+        
+
+          <button type="submit" class="btn int">Register</button>
+        </form>
+
+        <h3>Already have an account? <a href="/login">Log in</a></h3>
+        
+        <footer>
+          <p>
+            By continuing, you agree to Pinterest's <b>Terms of Service, Privacy policy.</b>
+          </p>
+          <hr />
+          <p>Already a member? <a href="/users/login">Log in</a></p>
+        </footer>
+      </div>
+    </div>
+
+  </body>
+</html>

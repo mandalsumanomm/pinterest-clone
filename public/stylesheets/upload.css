@@ -1,0 +1,106 @@
+.main-upload{
+  margin-bottom: 1.7%;
+}
+.horizontal-line1 {
+  border-top: 1px solid #ffffff;
+  margin: 18px 0;
+}
+.text-p {
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 90px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.vertical-line {
+  border-left: 1px solid #ebe8e8;
+  height: 100%;
+  position: absolute;
+  left: 75px;
+  top: 0;
+}
+.horizontal-line2 {
+  border-top: 1px solid #ffffff;
+  margin: 25px 0;
+  margin-left: 75px;
+}
+
+.container-upload {
+  height: 450.2px;
+  width: 375px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px dashed #6ba6e9;
+  border-radius: 30px;
+  background-color: #ccc;
+}
+
+.upload-form {
+  margin-top: 20px;
+}
+
+
+.upload-form {
+  margin-top: 50px;
+}
+
+.caption-input,
+.file-input {
+  display: block;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.file-label {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  height: 200px;
+  width: calc(100% - 40px); 
+  display: block; 
+  padding: 10px 15px;
+  background-color: #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center; 
+  margin: 20px auto; 
+  border: 1px dashed #6ba6e9;
+  border-radius: 25px;
+}
+
+
+
+.file-icon {
+  display: block;
+  font-size: 24px; 
+  margin-bottom: 5px; 
+  padding: 15px 15px;
+  align-items: center;
+}
+
+.file-input {
+  display: none; 
+}
+
+.upload-btn {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  display: block;
+  width: calc(100% - 20px);
+  padding: 10px;
+  background-color: lightsteelblue;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.upload-btn:hover {
+  background-color: #85b3e7;
+}
+.success{
+  color: green;
+}
