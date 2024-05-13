@@ -1,1 +1,1 @@
-﻿# pinterser-clone
+﻿# pinterest-clone
